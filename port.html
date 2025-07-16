@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>  Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+
+    }
+
+    body {
+      background: #0f0f0f;
+      color: #ffffffbe;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      z-index: 999;
+      border-bottom: 1px solid #ae00ff;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #0055ff;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #0059ff;
+    }
+
+    section {
+      padding: 100px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    #hero {
+      background: linear-gradient(135deg, #000, #001f1f);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      animation: fadeInDown 1.5s ease;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border: none;
+      background: linear-gradient(to right, #008cff, #0073bf);
+      color: #000;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: linear-gradient(to right, #00bfa5, #00ffe1);
+    }
+
+    #about, #projects, #contact {
+      background: #121212;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .project {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 255, 225, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(0, 255, 225, 0.2);
+    }
+
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #00ffe1;
+    }
+
+    /* Scroll animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 1s all ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 500px;
+      margin-top: 30px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px 15px;
+      border-radius: 10px;
+      border: none;
+      background: #1f1f1f;
+      color: #fff;
+      resize: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: 2px solid #00ffe1;
+    }
+
+    @media (max-width: 600px) {
+      #hero h2 {
+        font-size: 2rem;
+      }
+      nav {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>MaxxCoder</h1>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero">
+    <h2>Hello, I'm Ayush Ratnakar </h2>
+    <p> Java Full Stack developer  | Creative Coder</p>
+    <a href="#projects" class="btn">See Projects</a>
+    <a href="your-cv-file.pdf" download class="btn" style="margin-top: 15px;">Download CV</a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="reveal">
+    <h2>About Me</h2>
+    <p>I am a passionate developer who loves building modern, responsive, and animated web experiences. Proficient in JAVA, CSS, JS, and UI design.</p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="reveal">
+    <h2>My Projects</h2>
+    <div class="project-grid">
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>Modern and animated portfolio using HTML, CSS & JS.</p>
+      </div>
+      <div class="project">
+        <h3>MovieHub App</h3>
+        <p>Movie listing platform with search, filters, and 4D-style animations.</p>
+      </div>
+      <div class="project">
+        <h3>Weather App</h3>
+        <p>Live weather dashboard using OpenWeatherMap API with animation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="reveal">
+    <h2>Contact Me</h2>
+    <form class="contact-form" onsubmit="return submitForm()">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 MaxxCoder. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll(".reveal").forEach((el) => {
+        const top = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    });
+
+    function submitForm() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill all fields.");
+        return false;
+      }
+
+      alert("Thank you for your message, " + name + "!");
+      return false; // Remove this if you connect to a backend
+    }
+  </script>
+</body>
+</html>
